@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recycling certificate – EcoScrap</title>
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/pages.css">
+</head>
+<body data-head="solid" class="page-light">
+<main class="light cert-page">
+  <div class="wrap">
+    <div class="cert-tools" id="tools" hidden>
+      <a class="btn" id="pdfBtn" href="#"><svg class="ico"><use href="/img/icons.svg#i-download"/></svg>Download PDF</a>
+      <button class="btn ghost" type="button" id="printBtn"><svg class="ico"><use href="/img/icons.svg#i-printer"/></svg>Print</button>
+      <button class="btn ghost" type="button" id="shareBtn"><svg class="ico"><use href="/img/icons.svg#i-send"/></svg>Copy verify link</button>
+    </div>
+    <article class="cert" id="cert" aria-live="polite">
+      <div class="skel" style="height:40px;width:40%"></div>
+      <div class="skel" style="height:90px;margin-top:40px"></div>
+      <div class="skel" style="height:200px;margin-top:30px"></div>
+    </article>
+    <section class="lookup" id="certLookup" hidden>
+      <h1>Verify a certificate</h1>
+      <p>Enter the certificate ID printed on the certificate, or scan its QR code.</p>
+      <form class="panel" id="certForm"><label class="field"><span>Certificate ID</span><input class="input mono" id="certId" placeholder="CERT-XXXXXX-YYMMDD"></label><button class="btn block" type="submit">Verify</button></form>
+    </section>
+  </div>
+</main>
+<script src="/js/config.js"></script>
+<script src="/js/core.js"></script>
+<script src="/vendor/qrcode.js"></script>
+<script src="/js/certificate.js"></script>
+</body>
+</html>

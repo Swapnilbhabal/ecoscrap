@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Green Points – EcoScrap</title>
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/pages.css">
+</head>
+<body data-head="solid" class="page-light">
+<main class="light rw">
+  <div class="wrap">
+    <section class="lookup" id="rwLookup" hidden>
+      <h1>Your Green Points</h1>
+      <p>Enter any booking ID and the mobile number you used. Points from all your pickups are added together.</p>
+      <form id="rwForm" class="panel" novalidate>
+        <label class="field"><span>Booking ID</span><input class="input mono" id="rwId" placeholder="ES-XXXXXX" maxlength="9" autocomplete="off"></label>
+        <label class="field"><span>Mobile number</span><input class="input" id="rwPhone" inputmode="numeric" maxlength="10" placeholder="10 digits"></label>
+        <button class="btn block" type="submit">Show my points</button>
+      </form>
+      <div class="rw-how" style="text-align:left;margin-top:20px">
+        <h3>How points work</h3>
+        <ul>
+          <li><svg class="ico"><use href="/img/icons.svg#i-scale"/></svg><span>10 points for every kilogram the collector weighs</span></li>
+          <li><svg class="ico"><use href="/img/icons.svg#i-circle-check-big"/></svg><span>50 bonus points for every completed pickup</span></li>
+          <li><svg class="ico"><use href="/img/icons.svg#i-info"/></svg><span>Green Points are EcoScrap rewards, not carbon credits</span></li>
+        </ul>
+      </div>
+    </section>
+    <section id="rwBoard" hidden></section>
+  </div>
+</main>
+<script src="/js/config.js"></script>
+<script src="/js/core.js"></script>
+<script src="/js/rewards.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#061a13">
+<title>Collector app – EcoScrap</title>
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body class="app" data-chrome="none">
+<header class="app-bar">
+  <a class="brand" href="/" id="brand"></a>
+  <div class="who-mini" id="whoMini"></div>
+  <button class="icon-btn" id="refreshBtn" aria-label="Refresh jobs" hidden><svg class="ico"><use href="/img/icons.svg#i-refresh-cw"/></svg></button>
+  <button class="icon-btn" id="outBtn" aria-label="Sign out" hidden><svg class="ico"><use href="/img/icons.svg#i-log-out"/></svg></button>
+</header>
+
+
+<main class="col-main" id="main" hidden>
+  <div class="col-stats" id="colStats"></div>
+  <h2 style="font-size:1.4rem;margin-bottom:12px">Your pickups</h2>
+  <div id="jobs"></div>
+</main>
+
+<script src="/js/config.js"></script>
+<script src="/js/core.js"></script>
+<script src="/vendor/leaflet/leaflet.js"></script>
+<script src="/js/map-kit.js"></script>
+<script src="/js/collector.js"></script>
+</body>
+</html>

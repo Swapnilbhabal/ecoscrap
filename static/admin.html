@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin dashboard – EcoScrap</title>
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body class="app" data-chrome="none">
+<header class="app-bar">
+  <a class="brand" href="/" id="brand"></a>
+  <div class="who-mini" id="whoMini"></div>
+  <button class="icon-btn" id="outBtn" aria-label="Sign out" hidden><svg class="ico"><use href="/img/icons.svg#i-log-out"/></svg></button>
+</header>
+
+
+<div class="adm" id="adm" hidden>
+  <nav class="adm-side" aria-label="Dashboard sections">
+    <button data-view="overview" aria-current="true"><svg class="ico"><use href="/img/icons.svg#i-layout-dashboard"/></svg>Overview</button>
+    <button data-view="requests"><svg class="ico"><use href="/img/icons.svg#i-list"/></svg>Requests<span class="count" id="activeCount" hidden></span></button>
+    <button data-view="live"><svg class="ico"><use href="/img/icons.svg#i-map"/></svg>Live map</button>
+    <button data-view="messages"><svg class="ico"><use href="/img/icons.svg#i-mail"/></svg>Messages<span class="count" id="msgCount" hidden></span></button>
+    <div class="spacer"></div>
+    <button class="side-extra" id="resetBtn"><svg class="ico"><use href="/img/icons.svg#i-refresh-cw"/></svg>Reset demo data</button>
+  </nav>
+  <main class="adm-main" id="view"></main>
+</div>
+<aside class="drawer" id="drawer" aria-label="Request details"></aside>
+
+<script src="/js/config.js"></script>
+<script src="/js/core.js"></script>
+<script src="/vendor/leaflet/leaflet.js"></script>
+<script src="/js/map-kit.js"></script>
+<script src="/js/admin.js"></script>
+</body>
+</html>

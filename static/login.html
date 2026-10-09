@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign in – EcoScrap</title>
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/account.css">
+</head>
+<body data-head="solid" class="page-light" data-foot="none">
+<main class="auth">
+  <aside class="auth-side">
+    <svg class="traces" aria-hidden="true"></svg>
+    <div class="auth-side-copy">
+      <h1>Sign in to EcoScrap</h1>
+      <p>One place for everyone in a pickup.</p>
+      <ul>
+        <li><b>Customers</b> book pickups, follow the collector live and keep every certificate.</li>
+        <li><b>Collectors</b> see their jobs, run the trip and confirm the handover.</li>
+        <li><b>Admin</b> watches every request, reassigns collectors and sees the numbers.</li>
+      </ul>
+    </div>
+  </aside>
+
+  <section class="auth-main">
+    <h2 class="auth-q">Who are you?</h2>
+    <div class="roles" role="tablist" aria-label="Choose your role">
+      <button class="role" role="tab" data-role="customer" aria-selected="true"><svg class="ico"><use href="/img/icons.svg#i-house"/></svg><b>Customer</b><small>I have e-waste to give</small></button>
+      <button class="role" role="tab" data-role="collector" aria-selected="false"><svg class="ico"><use href="/img/icons.svg#i-truck"/></svg><b>Collector</b><small>I pick up e-waste</small></button>
+      <button class="role" role="tab" data-role="admin" aria-selected="false"><svg class="ico"><use href="/img/icons.svg#i-layout-dashboard"/></svg><b>Admin</b><small>I run operations</small></button>
+    </div>
+
+    <!-- customer -->
+    <div class="role-pane" data-pane="customer">
+      <div class="seg-tabs" role="tablist">
+        <button data-mode="login" aria-selected="true">Sign in</button>
+        <button data-mode="signup" aria-selected="false">Create account</button>
+      </div>
+      <form id="custLogin" class="auth-form" novalidate>
+        <label class="field"><span>Mobile number</span><input class="input" name="phone" inputmode="numeric" maxlength="10" autocomplete="tel-national" placeholder="10 digits"></label>
+        <label class="field"><span>Password</span><input class="input" name="password" type="password" autocomplete="current-password"></label>
+        <button class="btn block" type="submit">Sign in</button>
+        <button class="btn ghost block" type="button" id="demoFill">Use the demo customer account</button>
+      </form>
+      <form id="custSignup" class="auth-form" novalidate hidden>
+        <label class="field"><span>Full name</span><input class="input" name="name" autocomplete="name" maxlength="60"></label>
+        <label class="field"><span>Mobile number</span><input class="input" name="phone" inputmode="numeric" maxlength="10" autocomplete="tel-national" placeholder="10 digits"></label>
+        <label class="field"><span>Email <small>(optional)</small></span><input class="input" name="email" type="email" autocomplete="email"></label>
+        <label class="field"><span>Password <small>(at least 6 characters)</small></span><input class="input" name="password" type="password" autocomplete="new-password"></label>
+        <button class="btn block" type="submit">Create account</button>
+        <p class="fine">Pickups you booked earlier as a guest with this mobile number appear in your account automatically.</p>
+      </form>
+    </div>
+
+    <!-- collector -->
+    <div class="role-pane" data-pane="collector" hidden>
+      <form id="colLogin" class="auth-form" novalidate>
+        <label class="field"><span>Collector ID</span><input class="input mono id-input" name="collector_id" id="colId" maxlength="12" autocomplete="username" placeholder="e.g. CL-101" spellcheck="false"></label>
+        <div class="col-card" id="colCard" hidden aria-live="polite"></div>
+        <label class="field"><span>PIN</span><input class="input" name="pin" type="password" inputmode="numeric" maxlength="8" autocomplete="current-password" placeholder="Your personal PIN"></label>
+        <button class="btn block" type="submit">Open collector app</button>
+        <p class="fine">Your collector ID and PIN are on your EcoScrap partner card. Each collector has their own PIN.</p>
+      </form>
+    </div>
+
+    <!-- admin -->
+    <div class="role-pane" data-pane="admin" hidden>
+      <form id="admLogin" class="auth-form" novalidate>
+        <label class="field"><span>Admin password</span><input class="input" name="pin" type="password" maxlength="40" autocomplete="current-password"></label>
+        <button class="btn block" type="submit">Open admin dashboard</button>
+      </form>
+    </div>
+    <p class="fine back"><a class="link" href="/book.html">Book without an account</a></p>
+  </section>
+</main>
+<script src="/js/config.js"></script>
+<script src="/js/core.js"></script>
+<script src="/js/login.js"></script>
+</body>
+</html>

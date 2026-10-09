@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Track your pickup – EcoScrap</title>
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/pages.css">
+</head>
+<body data-head="solid" class="page-light">
+<main class="light track">
+  <div class="wrap">
+    <section class="lookup" id="lookup" hidden>
+      <h1>Track your pickup</h1>
+      <p>Enter the booking ID from your confirmation and the mobile number you booked with.</p>
+      <form id="lookupForm" class="panel" novalidate>
+        <label class="field"><span>Booking ID</span><input class="input mono" id="lkId" placeholder="ES-XXXXXX" autocomplete="off" maxlength="9"></label>
+        <label class="field"><span>Mobile number</span><input class="input" id="lkPhone" inputmode="numeric" maxlength="10" placeholder="10 digits" autocomplete="tel-national"></label>
+        <button class="btn block" type="submit">Show my pickup</button>
+      </form>
+    </section>
+
+    <section id="board" hidden>
+      <div class="trk-head" style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:20px">
+        <div>
+          <p class="muted" style="font-size:var(--t-sm)">Booking <b class="mono" id="bId" style="color:var(--ink)"></b></p>
+          <h1 style="font-size:clamp(1.9rem,4vw,2.8rem)" id="bTitle">Your pickup</h1>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center" id="bTags"></div>
+      </div>
+      <div class="trk-grid">
+        <div class="trk-map-card">
+          <div class="map" id="trkMap" aria-label="Live map of your pickup"></div>
+          <div class="trk-mode" id="trkMode"></div>
+          <div class="trk-status" id="trkStatus" aria-live="polite"></div>
+        </div>
+        <div class="trk-side" id="trkSide"></div>
+      </div>
+    </section>
+  </div>
+</main>
+<script src="/js/config.js"></script>
+<script src="/js/core.js"></script>
+<script src="/vendor/leaflet/leaflet.js"></script>
+<script src="/js/map-kit.js"></script>
+<script src="/js/track.js"></script>
+</body>
+</html>

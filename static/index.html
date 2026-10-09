@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EcoScrap – Free doorstep e-waste pickup in Mumbai</title>
+<meta name="description" content="Book a free doorstep e-waste pickup in Mumbai. Published rates, live tracking, MPCB-authorised recyclers, a recycling certificate and Green Points.">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/vendor/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/home.css">
+<script type="importmap">{ "imports": { "three": "/vendor/three.module.min.js" } }</script>
+</head>
+<body class="home">
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="hero-title">
+  <canvas id="hero3d" aria-hidden="true"></canvas>
+  <div class="hero-fallback" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <p class="hero-kicker"><span class="tag live">Picking up across Mumbai today</span></p>
+      <h1 id="hero-title">Your old phone is a tiny mine.</h1>
+      <p class="hero-lead">Book a free doorstep pickup. We pay the published rate, take your e-waste to an MPCB-authorised recycler, and you follow every step live, right up to your recycling certificate.</p>
+      <div class="hero-actions">
+        <a class="btn lg" href="/book.html">Book a free pickup</a>
+        <a class="btn lg ghost" href="#rates">Check what you'll get</a>
+      </div>
+      <ul class="hero-facts">
+        <li><svg class="ico"><use href="/img/icons.svg#i-shield-check"/></svg><span><b>7 authorised recyclers</b> from the MPCB list</span></li>
+        <li><svg class="ico"><use href="/img/icons.svg#i-navigation"/></svg><span><b>Live tracking</b> with ETA</span></li>
+        <li><svg class="ico"><use href="/img/icons.svg#i-award"/></svg><span><b>Certificate + Green Points</b> after every pickup</span></li>
+      </ul>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#inside" aria-label="Scroll to see what's inside a phone"><span></span></a>
+</section>
+
+<!-- ============ LIVE NUMBERS ============ -->
+<section class="numbers" aria-label="EcoScrap so far">
+  <div class="wrap numbers-row" id="stats">
+    <div class="num"><b class="skel" style="width:5ch">&nbsp;</b><span>e-waste recovered</span></div>
+    <div class="num"><b class="skel" style="width:4ch">&nbsp;</b><span>pickups completed</span></div>
+    <div class="num"><b class="skel" style="width:5ch">&nbsp;</b><span>CO₂e avoided (estimate)</span></div>
+    <div class="num"><b class="skel" style="width:3ch">&nbsp;</b><span>average rating</span></div>
+  </div>
+</section>
+
+<!-- ============ INSIDE YOUR PHONE (scroll-driven 3D) ============ -->
+<section class="inside" id="inside" aria-labelledby="inside-title">
+  <div class="inside-sticky">
+    <canvas id="phone3d" aria-hidden="true"></canvas>
+    <div class="inside-labels" id="phoneLabels" aria-hidden="true"></div>
+    <div class="wrap inside-copy">
+      <h2 id="inside-title">What's inside the phone in your drawer</h2>
+      <p class="inside-lead">A phone is about 200 grams of glass, metal and plastic layered together. Scroll to take one apart.</p>
+      <ol class="inside-steps" id="insideSteps">
+        <li class="on"><b>Sealed together</b><span>Glued layers make it hard to separate by hand, which is why informal yards burn or crush phones.</span></li>
+        <li><b>Taken apart properly</b><span>An authorised dismantler opens each layer and sorts it for the right recovery process.</span></li>
+        <li><b>Every layer has a destination</b><span>Metals go to smelters, the battery to a battery recycler, plastics and glass to their own streams.</span></li>
+      </ol>
+    </div>
+    <ul class="inside-fallback" id="insideFallback" hidden>
+      <li><b>Display glass</b> Glass, indium tin oxide touch layer</li>
+      <li><b>Frame</b> Aluminium, re-smelted</li>
+      <li><b>Mainboard</b> Copper, gold, silver, palladium, lead solder</li>
+      <li><b>Battery</b> Lithium, cobalt, nickel</li>
+      <li><b>Camera & speakers</b> Rare-earth magnets</li>
+      <li><b>Back cover</b> Glass or plastic</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section light how" id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="how-title">From your door to the recycler in four steps</h2>
+      <p>You book in two minutes. The rest is visible on your phone, the same way you watch a food delivery arrive.</p>
+    </div>
+    <ol class="steps">
+      <li class="step">
+        <div class="step-art art-book" aria-hidden="true">
+          <span class="mini-chip on">Phone ×2</span><span class="mini-chip">Laptop</span><span class="mini-chip on">Chargers</span>
+          <div class="mini-total"><small>You'll get</small><b>₹580</b></div>
+        </div>
+        <span class="step-n">1</span>
+        <h3>Book a slot</h3>
+        <p>Pick your items and their condition. The rate card shows your payout before you confirm.</p>
+      </li>
+      <li class="step">
+        <div class="step-art art-map" aria-hidden="true">
+          <svg viewBox="0 0 200 120"><path class="road" d="M10 100 C 60 100, 60 30, 110 40 S 170 80, 185 22"/><path class="road-done" d="M10 100 C 60 100, 60 30, 110 40 S 170 80, 185 22"/><circle cx="185" cy="22" r="7" class="home-dot"/></svg>
+          <div class="mini-eta"><b>4 min</b> away</div>
+        </div>
+        <span class="step-n">2</span>
+        <h3>Watch the collector arrive</h3>
+        <p>A named collector is assigned. Follow them on the live map with distance and ETA.</p>
+      </li>
+      <li class="step">
+        <div class="step-art art-otp" aria-hidden="true">
+          <div class="otp-boxes"><span>4</span><span>8</span><span>2</span><span>7</span></div>
+          <small>Share only at your door</small>
+        </div>
+        <span class="step-n">3</span>
+        <h3>Hand over with a code</h3>
+        <p>Items are weighed in front of you. Your 4-digit code confirms the handover, and payment is made.</p>
+      </li>
+      <li class="step">
+        <div class="step-art art-cert" aria-hidden="true">
+          <div class="cert-mini"><i></i><b>Certificate</b><span>3.1 kg recycled</span><span>+81 Green Points</span><em></em></div>
+        </div>
+        <span class="step-n">4</span>
+        <h3>Get proof and points</h3>
+        <p>The recycler confirms receipt. You get a certificate with a QR code and Green Points to spend.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ RATE CALCULATOR ============ -->
+<section class="section rates" id="rates" aria-labelledby="rates-title">
+  <div class="wrap rates-grid">
+    <div>
+      <h2 id="rates-title">One rate card. Same price for everyone.</h2>
+      <p class="rates-lead">No haggling at the door. Choose an item and its condition to see exactly what the collector pays. If the collector finds a different condition, the price changes to that line of the same card, in front of you.</p>
+      <a class="link" href="/rates.html">See the full rate card</a>
+    </div>
+    <div class="calc panel" id="calc">
+      <div class="calc-cats" id="calcCats" role="group" aria-label="Item type"></div>
+      <div class="calc-row">
+        <div class="chips" id="calcCond" role="group" aria-label="Condition"></div>
+        <div class="stepper" aria-label="Quantity"><button type="button" data-q="-1" aria-label="One less">−</button><output id="calcQty">1</output><button type="button" data-q="1" aria-label="One more">+</button></div>
+      </div>
+      <div class="calc-out">
+        <div><small>Collector pays</small><b id="calcRs">₹0</b></div>
+        <div><small>Green Points</small><b id="calcPts" class="gold-t">0</b></div>
+        <div><small>CO₂e avoided</small><b id="calcCo2">0 kg</b></div>
+      </div>
+      <a class="btn block" id="calcBook" href="/book.html">Book this pickup</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VS KABADIWALA ============ -->
+<section class="section light versus" aria-labelledby="vs-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="vs-title">Why not just give it to the kabadiwala?</h2>
+      <p>He pays cash on the spot, and sometimes a little more for working items. The difference is what happens after he leaves.</p>
+    </div>
+    <div class="vs-table" role="table" aria-label="Kabadiwala compared with EcoScrap">
+      <div class="vs-row vs-headrow" role="row"><span role="columnheader"></span><span role="columnheader">Local kabadiwala</span><span role="columnheader" class="vs-us">EcoScrap</span></div>
+      <div class="vs-row" role="row"><b role="rowheader">Price</b><span role="cell">Negotiated at the door</span><span role="cell" class="vs-us">Published rate card, same for everyone</span></div>
+      <div class="vs-row" role="row"><b role="rowheader">Where it ends up</b><span role="cell">Often informal yards where boards are burnt or dipped in acid to pull out metal</span><span role="cell" class="vs-us">An MPCB-authorised dismantler, named on your certificate</span></div>
+      <div class="vs-row" role="row"><b role="rowheader">Your data</b><span role="cell">Phone goes as it is</span><span role="cell" class="vs-us">Data-wipe request recorded with the pickup</span></div>
+      <div class="vs-row" role="row"><b role="rowheader">Proof</b><span role="cell">None</span><span role="cell" class="vs-us">Certificate with a QR code anyone can verify</span></div>
+      <div class="vs-row" role="row"><b role="rowheader">Extra</b><span role="cell">—</span><span role="cell" class="vs-us">Green Points for plants, eco-products and vouchers</span></div>
+    </div>
+    <p class="vs-note">Who pays for the points? Under India's E-Waste (Management) Rules 2022, electronics brands must buy EPR certificates from registered recyclers for every kilogram recycled properly. That income is what makes it possible to reward you. <a class="link" href="/learn.html#rules">How EPR works</a></p>
+  </div>
+</section>
+
+<!-- ============ RECYCLERS MAP ============ -->
+<section class="section recyclers" id="recyclers" aria-labelledby="rec-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="rec-title">Only government-authorised recyclers</h2>
+      <p>Every pickup is assigned to the nearest dismantler or recycler on the Maharashtra Pollution Control Board's authorised list.</p>
+    </div>
+    <div class="rec-grid">
+      <div class="map dark" id="recMap" role="img" aria-label="Map of authorised recyclers"></div>
+      <ol class="rec-list" id="recList"></ol>
+    </div>
+    <p class="rec-source">Source: <a class="link" id="recSource" href="#" target="_blank" rel="noopener">MPCB list of authorised e-waste dismantlers and recyclers</a>. Map positions are approximate. EcoScrap is a student project and is not affiliated with these businesses.</p>
+  </div>
+</section>
+
+<!-- ============ GREEN POINTS ============ -->
+<section class="section light points" aria-labelledby="pts-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="pts-title">Green Points for every kilo</h2>
+      <p>Earn 10 points per kg plus 50 for every completed pickup. Spend them on things that keep waste out of landfill.</p>
+    </div>
+    <div class="reward-row" id="rewardRow"></div>
+    <a class="btn dark" href="/rewards.html">Check my points</a>
+  </div>
+</section>
+
+<!-- ============ RECYCLE EVERYTHING ELSE ============ -->
+<section class="section beyond" aria-labelledby="beyond-title">
+  <div class="wrap beyond-grid">
+    <div>
+      <h2 id="beyond-title">Not electronics? It can still be recycled.</h2>
+      <p class="beyond-lead">We listed Indian organisations that turn plastic bags into sneakers, temple flowers into incense and old clothes into resources for villages.</p>
+      <a class="btn" href="/directory.html">Recycle everything else</a>
+    </div>
+    <ul class="beyond-list">
+      <li><span class="tag copper">Paper</span><b>Eila Enterprises</b><span>Old newspapers rolled into eco pencils, Karnataka</span></li>
+      <li><span class="tag copper">Flowers</span><b>Phool</b><span>Temple flowers turned into charcoal-free incense</span></li>
+      <li><span class="tag copper">Clothes</span><b>Goonj</b><span>Urban surplus clothing sent to rural communities</span></li>
+      <li><span class="tag copper">Plastic</span><b>Rhino Machines</b><span>Turns waste plastic and foundry dust into bricks, Gujarat</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section light faq" aria-labelledby="faq-title">
+  <div class="wrap faq-grid">
+    <h2 id="faq-title">Questions people ask before booking</h2>
+    <div class="faq-list">
+      <details open><summary>Is the pickup really free?</summary><p>Yes. There is no pickup charge. You receive the rate card amount for your items, or you can choose to donate it.</p></details>
+      <details><summary>Do you take phones that don't switch on?</summary><p>Yes. Dead and broken items have their own rows on the rate card. A dead phone still contains copper, gold and a battery that must not go in the dustbin.</p></details>
+      <details><summary>What happens to my data?</summary><p>Tick “data wipe” while booking and it is recorded on your pickup and certificate. We still recommend you back up, log out of all accounts and factory-reset before handing over.</p></details>
+      <details><summary>Why should I share a code with the collector?</summary><p>The 4-digit code proves the collector actually met you. Without it the pickup cannot be closed, so nobody can mark your items as collected without you.</p></details>
+      <details><summary>Where do you operate?</summary><p>Mumbai, Thane and Navi Mumbai, Monday to Saturday between 9 am and 8 pm.</p></details>
+      <details><summary>Are Green Points the same as carbon credits?</summary><p>No. Carbon credits are a regulated market instrument. Green Points are EcoScrap reward points that you can spend in our rewards catalogue.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap contact-grid">
+    <div>
+      <h2 id="contact-title">Have a lot of e-waste? Talk to us.</h2>
+      <p class="contact-lead">Offices, colleges and housing societies can schedule a bulk collection drive. Individuals can ask anything about a pickup.</p>
+      <div class="contact-ways" id="contactWays"></div>
+    </div>
+    <form class="panel contact-form" id="contactForm" novalidate>
+      <div class="grid-2">
+        <label class="field"><span>Your name</span><input class="input" name="name" autocomplete="name" required></label>
+        <label class="field"><span>Phone or email</span><input class="input" name="contact" autocomplete="email" required></label>
+      </div>
+      <label class="field"><span>About</span>
+        <select class="select" name="topic"><option value="pickup">A pickup</option><option value="business">Bulk collection for an office or society</option><option value="partner">Becoming a recycler partner</option><option value="other">Something else</option></select></label>
+      <label class="field"><span>Message</span><textarea class="textarea" name="message" required></textarea></label>
+      <button class="btn" type="submit">Send message</button>
+    </form>
+  </div>
+</section>
+
+</main>
+<script src="/js/config.js"></script>
+<script src="/js/core.js"></script>
+<script src="/vendor/leaflet/leaflet.js"></script>
+<script src="/js/home.js"></script>
+<script type="module" src="/js/hero3d.js"></script>
+<script type="module" src="/js/phone3d.js"></script>
+</body>
+</html>

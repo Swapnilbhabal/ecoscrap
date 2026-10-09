@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why e-waste matters – EcoScrap</title>
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/media/heap-poster.jpg" as="image">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/pages.css">
+<link rel="stylesheet" href="/css/learn.css">
+</head>
+<body class="learn-page">
+
+<!-- ============ HERO: rendered video loop ============ -->
+<header class="l-hero">
+  <video class="l-hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="/media/heap-poster.jpg" aria-hidden="true">
+    <source src="/media/heap.webm" type="video/webm">
+    <source src="/media/heap.mp4" type="video/mp4">
+  </video>
+  <div class="wrap l-hero-copy">
+    <h1>Why e-waste needs a proper ending</h1>
+    <p>What is inside old electronics, what goes wrong when they are burnt or dumped, and what India's E-Waste Rules ask of everyone in the chain.</p>
+    <button class="btn ghost sm" id="videoToggle" type="button" aria-pressed="false">Pause animation</button>
+  </div>
+</header>
+
+<nav class="learn-nav light" aria-label="On this page"><div class="wrap">
+  <a href="#scale">The scale</a><a href="#hazards">What's toxic</a><a href="#journey">Where it goes</a><a href="#rules">E-Waste Rules 2022</a><a href="#informal">Informal vs authorised</a><a href="#before">Before you hand over</a><a href="#co2">How we estimate CO₂</a><a href="#sources">Sources</a>
+</div></nav>
+
+<main>
+
+<!-- ============ SCALE ============ -->
+<section class="lsec light" id="scale"><div class="wrap two">
+  <div>
+    <h2>India generated about 17.8 lakh tonnes of e-waste in 2023-24</h2>
+    <p class="lead">That is the Central Pollution Control Board's estimate, up from 16.0 lakh tonnes two years earlier. It is worked out from sales data and the average life of each kind of device.</p>
+    <div class="per-day">
+      <b><span data-count="4872">0</span> tonnes</b>
+      <span>every single day, on average. That is roughly <strong>487 ten-tonne trucks</strong> of old electronics daily.</span>
+    </div>
+    <div class="trucks" aria-hidden="true"><div class="truck-track" id="truckTrack"></div></div>
+  </div>
+  <figure class="bars-fig">
+    <svg viewBox="0 0 420 300" class="bars" role="img" aria-labelledby="barsTitle">
+      <title id="barsTitle">E-waste generated in India: 16.0 lakh tonnes in 2021-22, 16.1 in 2022-23, 17.8 in 2023-24</title>
+      <g class="grid">
+        <line x1="40" x2="410" y1="250" y2="250"/><line x1="40" x2="410" y1="190" y2="190"/><line x1="40" x2="410" y1="130" y2="130"/><line x1="40" x2="410" y1="70" y2="70"/>
+        <text x="32" y="254">0</text><text x="32" y="194">5</text><text x="32" y="134">10</text><text x="32" y="74">15</text>
+      </g>
+      <!-- scale: 12 px per lakh tonne, baseline y=250 -->
+      <g class="bar" style="--h:192px;--d:0s"><rect x="70" y="58" width="80" height="192" rx="6"/><text class="val" x="110" y="48">16.0</text><text class="yr" x="110" y="274">2021-22</text></g>
+      <g class="bar" style="--h:193px;--d:.15s"><rect x="185" y="57" width="80" height="193" rx="6"/><text class="val" x="225" y="47">16.1</text><text class="yr" x="225" y="274">2022-23</text></g>
+      <g class="bar now" style="--h:213px;--d:.3s"><rect x="300" y="37" width="80" height="213" rx="6"/><text class="val" x="340" y="27">17.8</text><text class="yr" x="340" y="274">2023-24</text></g>
+    </svg>
+    <figcaption>Lakh tonnes per year. CPCB estimates, Lok Sabha answer of 24 March 2025. India has 322 authorised recyclers with about 22 lakh tonnes of yearly capacity.</figcaption>
+  </figure>
+</div></section>
+
+<!-- ============ HAZARDS (illustrated, animated) ============ -->
+<section class="lsec dark" id="hazards"><div class="wrap">
+  <div class="sec-head">
+    <h2>The toxic part of a useful object</h2>
+    <p class="lead">Most of a device is harmless while it works. The trouble starts when it is broken open the wrong way, burnt for its copper or thrown in with household waste.</p>
+  </div>
+  <div class="haz-grid">
+
+    <article class="haz-card">
+      <svg viewBox="0 0 200 140" aria-hidden="true">
+        <rect x="28" y="38" width="144" height="84" rx="8" fill="#0f4a37"/>
+        <path d="M40 58h38v22h28M122 104h38M58 112V92h48M140 50v30h18" stroke="#d2793a" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <rect x="84" y="52" width="36" height="28" rx="3" fill="#0c0f0e"/>
+        <g fill="#c7d2cc"><circle cx="40" cy="58" r="4"/><circle cx="106" cy="80" r="4"/><circle cx="160" cy="104" r="4"/><circle cx="58" cy="112" r="4"/><circle cx="158" cy="80" r="4"/></g>
+        <g class="rise" font-family="JB Mono, monospace" font-size="11" fill="#c7d2cc"><text x="44" y="50">Pb</text><text x="100" y="40" style="animation-delay:.8s">Pb</text><text x="150" y="70" style="animation-delay:1.6s">Pb</text></g>
+      </svg>
+      <h3>Lead</h3><p class="where">Solder on circuit boards, glass of old CRT TVs</p><p>Damages the nervous system and kidneys. Children are most at risk.</p>
+    </article>
+
+    <article class="haz-card">
+      <svg viewBox="0 0 200 140" aria-hidden="true">
+        <rect x="36" y="20" width="128" height="82" rx="6" fill="#0c0f0e" stroke="#4a5a54" stroke-width="3"/>
+        <rect class="tube" x="44" y="90" width="112" height="6" rx="3" fill="#bfe7ff"/>
+        <rect x="92" y="102" width="16" height="14" fill="#4a5a54"/><rect x="70" y="116" width="60" height="6" rx="3" fill="#4a5a54"/>
+        <path class="drip" d="M150 100c0 0-6 8-6 12a6 6 0 0 0 12 0c0-4-6-12-6-12z" fill="#dfe6ea"/>
+        <ellipse cx="150" cy="132" rx="12" ry="3" fill="#dfe6ea" opacity=".6"/>
+      </svg>
+      <h3>Mercury</h3><p class="where">Backlight lamps in older LCD screens, some switches</p><p>A neurotoxin that builds up in water and in the fish people eat.</p>
+    </article>
+
+    <article class="haz-card">
+      <svg viewBox="0 0 200 140" aria-hidden="true">
+        <ellipse class="leak" cx="100" cy="122" rx="54" ry="7" fill="#e9b949" opacity=".55"/>
+        <g><rect x="58" y="34" width="34" height="84" rx="6" fill="#2b6b8a"/><rect x="68" y="26" width="14" height="10" rx="2" fill="#b9c4c0"/><rect x="58" y="70" width="34" height="18" fill="#e9b949"/></g>
+        <g><rect x="108" y="34" width="34" height="84" rx="6" fill="#2b6b8a"/><rect x="118" y="26" width="14" height="10" rx="2" fill="#b9c4c0"/><rect x="108" y="70" width="34" height="18" fill="#e9b949"/></g>
+        <text x="75" y="83" text-anchor="middle" font-size="9" font-family="JB Mono, monospace" fill="#10201a">NiCd</text>
+        <text x="125" y="83" text-anchor="middle" font-size="9" font-family="JB Mono, monospace" fill="#10201a">NiCd</text>
+      </svg>
+      <h3>Cadmium</h3><p class="where">Nickel-cadmium rechargeable batteries, old CRT coatings</p><p>Harms kidneys and bones, and is classed as a human carcinogen.</p>
+    </article>
+
+    <article class="haz-card">
+      <svg viewBox="0 0 200 140" aria-hidden="true">
+        <g class="puffs" fill="#3d4a45"><circle cx="90" cy="40" r="12"/><circle cx="108" cy="34" r="15" style="animation-delay:.7s"/><circle cx="98" cy="22" r="10" style="animation-delay:1.4s"/></g>
+        <rect x="52" y="62" width="96" height="40" rx="8" fill="#c7d2cc"/><rect x="62" y="70" width="40" height="6" rx="3" fill="#9aa8a2"/>
+        <path class="flame" d="M78 120c-4-12 6-14 4-24 8 6 10 12 8 18 4-4 4-10 2-16 12 8 14 20 8 28z" fill="#d2793a"/>
+        <path class="flame f2" d="M112 120c-3-10 5-12 4-20 7 5 8 10 6 15 3-3 3-8 2-13 10 7 11 17 6 22z" fill="#e9b949"/>
+      </svg>
+      <h3>Brominated flame retardants</h3><p class="where">Plastic casings and circuit boards</p><p>When burnt in the open, they release dioxins and furans.</p>
+    </article>
+
+    <article class="haz-card">
+      <svg viewBox="0 0 200 140" aria-hidden="true">
+        <g class="swell"><rect x="60" y="30" width="80" height="92" rx="10" fill="#b9c4c0"/><rect x="70" y="40" width="60" height="30" rx="4" fill="#0e3b2e"/><text x="100" y="60" text-anchor="middle" font-size="12" font-family="Bricolage, sans-serif" font-weight="700" fill="#fff">Li-ion</text></g>
+        <rect x="86" y="22" width="12" height="10" fill="#d2793a"/><rect x="104" y="22" width="12" height="10" fill="#d2793a"/>
+        <path class="spark" d="M150 34l6 10 11 2-9 7 2 11-10-6-10 6 2-11-9-7 11-2z" fill="#e9b949"/>
+      </svg>
+      <h3>Lithium-ion cells</h3><p class="where">Phones, laptops, power banks</p><p>Swell, catch fire or explode when crushed in garbage trucks and dumps.</p>
+    </article>
+
+    <article class="haz-card">
+      <svg viewBox="0 0 200 140" aria-hidden="true">
+        <g class="puffs grey" fill="#6b7f76"><circle cx="100" cy="44" r="10"/><circle cx="114" cy="36" r="13" style="animation-delay:.6s"/><circle cx="92" cy="26" r="9" style="animation-delay:1.2s"/></g>
+        <g fill="none" stroke="#0c0f0e" stroke-width="7"><ellipse cx="100" cy="96" rx="52" ry="18"/><ellipse cx="100" cy="88" rx="44" ry="15"/><ellipse cx="100" cy="80" rx="36" ry="12"/></g>
+        <g fill="none" stroke="#d2793a" stroke-width="2"><ellipse cx="100" cy="96" rx="52" ry="18"/><ellipse cx="100" cy="88" rx="44" ry="15"/></g>
+        <path class="flame" d="M94 78c-3-9 4-10 3-17 6 4 7 9 6 13 3-3 3-7 2-11 8 6 9 14 5 19z" fill="#e9b949"/>
+      </svg>
+      <h3>PVC insulation</h3><p class="where">Cables and wires</p><p>Burnt to reach the copper inside, it gives off acidic, toxic smoke.</p>
+    </article>
+
+    <article class="haz-card">
+      <svg viewBox="0 0 200 140" aria-hidden="true">
+        <rect x="64" y="14" width="72" height="116" rx="8" fill="#eef3ee"/><line x1="64" y1="56" x2="136" y2="56" stroke="#9aa8a2" stroke-width="3"/>
+        <rect x="124" y="28" width="5" height="18" rx="2" fill="#9aa8a2"/><rect x="124" y="66" width="5" height="26" rx="2" fill="#9aa8a2"/>
+        <g class="wisps" fill="none" stroke="#7be0a5" stroke-width="3" stroke-linecap="round">
+          <path d="M140 100c12-6 4-14 16-20s6-14 18-18"/><path d="M140 112c10-4 6-12 18-14s8-12 20-12" style="animation-delay:.9s"/><path d="M60 104c-12-6-4-14-16-20s-6-14-18-18" style="animation-delay:1.6s"/>
+        </g>
+      </svg>
+      <h3>Refrigerant gases</h3><p class="where">Fridges and air conditioners</p><p>Some deplete the ozone layer; many are strong greenhouse gases if vented.</p>
+    </article>
+
+    <article class="haz-card haz-cta">
+      <h3>None of this is a risk when it's handled properly</h3>
+      <p>Authorised dismantlers remove batteries, capture gases and send boards to metal refiners. That's where every EcoScrap pickup goes.</p>
+      <a class="btn" href="/book.html">Book a pickup</a>
+    </article>
+  </div>
+</div></section>
+
+<!-- ============ JOURNEY (animated conveyor) ============ -->
+<section class="lsec light" id="journey"><div class="wrap">
+  <div class="sec-head">
+    <h2>What happens after EcoScrap picks it up</h2>
+    <p class="lead">One phone, five stops. Watch it get separated into materials that go back into new products.</p>
+  </div>
+  <div class="belt-wrap">
+    <svg viewBox="0 0 960 260" class="belt" role="img" aria-label="Animation: a phone is collected, handed over, dismantled into battery, board, screen and frame, and the materials go to metal, glass, plastic and safe-disposal bins">
+      <defs>
+        <pattern id="beltP" width="24" height="12" patternUnits="userSpaceOnUse"><rect width="24" height="12" fill="#1c3a30"/><rect width="12" height="12" fill="#22473a"/><animateTransform attributeName="patternTransform" type="translate" from="0 0" to="24 0" dur="0.9s" repeatCount="indefinite"/></pattern>
+      </defs>
+      <!-- stations -->
+      <g class="stations">
+        <g transform="translate(70 0)"><circle cx="0" cy="70" r="34"/><use href="/img/icons.svg#i-truck" x="-16" y="54" width="32" height="32"/></g>
+        <g transform="translate(270 0)"><circle cx="0" cy="70" r="34"/><use href="/img/icons.svg#i-qr-code" x="-16" y="54" width="32" height="32"/></g>
+        <g transform="translate(480 0)"><circle cx="0" cy="70" r="34"/><use href="/img/icons.svg#i-wrench" x="-16" y="54" width="32" height="32"/></g>
+        <g transform="translate(690 0)"><circle cx="0" cy="70" r="34"/><use href="/img/icons.svg#i-flask-conical" x="-16" y="54" width="32" height="32"/></g>
+        <g transform="translate(890 0)"><circle cx="0" cy="70" r="34"/><use href="/img/icons.svg#i-shield-check" x="-16" y="54" width="32" height="32"/></g>
+      </g>
+      <rect x="20" y="150" width="920" height="22" rx="11" fill="url(#beltP)" class="belt-surface"/>
+      <g fill="#0e3b2e"><circle cx="40" cy="161" r="14"/><circle cx="920" cy="161" r="14"/></g>
+      <!-- the phone -->
+      <g class="tok phone"><rect x="-12" y="-22" width="24" height="44" rx="5" fill="#18241f" stroke="#c7d2cc" stroke-width="2"/><rect x="-8" y="-16" width="16" height="30" rx="2" fill="#0e3b2e"/></g>
+      <!-- parts after dismantling -->
+      <g class="tok part p1"><rect x="-10" y="-8" width="20" height="16" rx="3" fill="#b9c4c0"/></g>
+      <g class="tok part p2"><rect x="-11" y="-7" width="22" height="14" rx="2" fill="#0f4a37" stroke="#d2793a" stroke-width="2"/></g>
+      <g class="tok part p3"><rect x="-11" y="-8" width="22" height="16" rx="2" fill="#bfe7ff" opacity=".8"/></g>
+      <g class="tok part p4"><rect x="-11" y="-9" width="22" height="18" rx="4" fill="#9aa8a2"/></g>
+      <!-- bins -->
+      <g class="bins" font-family="Instrument, sans-serif" font-size="13" text-anchor="middle">
+        <g transform="translate(640 200)"><rect x="-26" y="0" width="52" height="40" rx="6" fill="#d2793a"/><text x="0" y="58">Metals</text></g>
+        <g transform="translate(706 200)"><rect x="-26" y="0" width="52" height="40" rx="6" fill="#7cc4ff"/><text x="0" y="58">Glass</text></g>
+        <g transform="translate(772 200)"><rect x="-26" y="0" width="52" height="40" rx="6" fill="#9aa8a2"/><text x="0" y="58">Plastic</text></g>
+        <g transform="translate(860 200)"><rect x="-30" y="0" width="60" height="40" rx="6" fill="#0e3b2e"/><text x="0" y="58">Battery unit</text></g>
+      </g>
+    </svg>
+  </div>
+  <ol class="flow">
+    <li><b>Collect</b><span>A named collector checks conditions against the rate card and weighs everything at your door.</span></li>
+    <li><b>Hand over</b><span>Your 4-digit code confirms the handover. Payment and Green Points are recorded.</span></li>
+    <li><b>Dismantle</b><span>An authorised dismantler separates the battery, board, screen and frame.</span></li>
+    <li><b>Recover</b><span>Copper, gold and aluminium go to refiners; glass and plastics to their own recyclers.</span></li>
+    <li><b>Dispose safely</b><span>Batteries go to a battery recycler; anything left goes to a licensed disposal facility.</span></li>
+  </ol>
+</div></section>
+
+<!-- ============ RULES + EPR LOOP ============ -->
+<section class="lsec dark" id="rules"><div class="wrap two">
+  <div>
+    <h2>India's E-Waste (Management) Rules, 2022</h2>
+    <p class="lead">Notified on 2 November 2022 and in force from 1 April 2023, the rules make the companies that sell electronics responsible for getting them recycled.</p>
+    <ul class="facts">
+      <li><b>Extended Producer Responsibility (EPR).</b> Every producer has a yearly recycling target based on what it sold.</li>
+      <li><b>EPR certificates.</b> Registered recyclers generate certificates for the e-waste they recycle. Producers buy them to meet their targets.</li>
+      <li><b>Registration on the CPCB portal</b> for manufacturers, producers, refurbishers and recyclers. Dealing with unregistered players is not allowed.</li>
+      <li><b>Environmental compensation</b> can be charged for breaking the rules.</li>
+      <li><b>Solar panels</b> now count as e-waste too.</li>
+    </ul>
+    <p class="note">Our recycler list comes from MPCB's authorisation list. Under the 2022 rules, check each recycler's registration on the CPCB EPR portal before a real launch.</p>
+  </div>
+  <figure class="epr-fig">
+    <svg viewBox="0 0 440 440" class="epr" role="img" aria-labelledby="eprT">
+      <title id="eprT">EPR loop: brands sell devices to you; you hand e-waste to EcoScrap; EcoScrap delivers it to a registered recycler; the recycler sells EPR certificates to brands. Money flows the other way and funds your payout and Green Points.</title>
+      <circle cx="220" cy="220" r="150" class="ring-out"/>
+      <circle cx="220" cy="220" r="104" class="ring-in"/>
+      <path id="outerPath" d="M220 70a150 150 0 1 1 -0.1 0" fill="none"/>
+      <path id="innerPath" d="M220 116a104 104 0 1 0 0.1 0" fill="none"/>
+      <g class="dots-out">
+        <circle r="6"><animateMotion dur="8s" repeatCount="indefinite"><mpath href="#outerPath"/></animateMotion></circle>
+        <circle r="6"><animateMotion dur="8s" begin="-2s" repeatCount="indefinite"><mpath href="#outerPath"/></animateMotion></circle>
+        <circle r="6"><animateMotion dur="8s" begin="-4s" repeatCount="indefinite"><mpath href="#outerPath"/></animateMotion></circle>
+        <circle r="6"><animateMotion dur="8s" begin="-6s" repeatCount="indefinite"><mpath href="#outerPath"/></animateMotion></circle>
+      </g>
+      <g class="dots-in">
+        <text font-size="15" text-anchor="middle" dy="5">₹<animateMotion dur="6s" repeatCount="indefinite"><mpath href="#innerPath"/></animateMotion></text>
+        <text font-size="15" text-anchor="middle" dy="5">₹<animateMotion dur="6s" begin="-3s" repeatCount="indefinite"><mpath href="#innerPath"/></animateMotion></text>
+      </g>
+      <g class="node" transform="translate(220 70)"><circle r="40"/><text y="-4">Brand</text><text y="13" class="s">sells devices</text></g>
+      <g class="node" transform="translate(370 220)"><circle r="40"/><text y="-4">You</text><text y="13" class="s">book pickup</text></g>
+      <g class="node us" transform="translate(220 370)"><circle r="40"/><text y="-4">EcoScrap</text><text y="13" class="s">collects</text></g>
+      <g class="node" transform="translate(70 220)"><circle r="40"/><text y="-4">Recycler</text><text y="13" class="s">EPR certificate</text></g>
+      <text x="220" y="212" class="mid">e-waste goes round</text>
+      <text x="220" y="234" class="mid gold">money comes back</text>
+    </svg>
+    <figcaption>Copper dots: e-waste moving through the chain. Gold ₹: brands pay recyclers for EPR certificates, which funds the rate card payout and your Green Points.</figcaption>
+  </figure>
+</div></section>
+
+<!-- ============ INFORMAL vs AUTHORISED (live canvas scenes) ============ -->
+<section class="lsec light" id="informal"><div class="wrap">
+  <div class="sec-head">
+    <h2>Same phone, two very different endings</h2>
+    <p class="lead">The kabadiwala is not the villain. He is the first link in a chain that often ends in unregulated yards where nobody is protected.</p>
+  </div>
+  <div class="vs-scenes">
+    <figure class="scene bad">
+      <canvas id="sceneBad" width="640" height="380" aria-label="Animation of an informal yard: a pile of e-waste burning with thick black smoke"></canvas>
+      <figcaption><span class="tag bad">Informal yard</span>
+        <ul><li>Cables and boards burnt in the open to reach copper</li><li>Acid baths for gold, poured into drains afterwards</li><li>Workers, sometimes children, without gloves or masks</li><li>Glass, plastic and batteries dumped</li></ul></figcaption>
+    </figure>
+    <figure class="scene good">
+      <canvas id="sceneGood" width="640" height="380" aria-label="Animation of an authorised facility: items on a conveyor are sorted into separate material bins"></canvas>
+      <figcaption><span class="tag ok">Authorised dismantler</span>
+        <ul><li>Items sorted by hand and machine on a conveyor</li><li>Batteries removed first and sent to a battery recycler</li><li>Metals refined, plastics and glass recycled</li><li>Recorded weights, and a certificate for you</li></ul></figcaption>
+    </figure>
+  </div>
+</div></section>
+
+<!-- ============ BEFORE YOU HAND OVER (animated phone) ============ -->
+<section class="lsec dark" id="before"><div class="wrap before-grid">
+  <div class="phone-mock" aria-hidden="true">
+    <div class="pm-notch"></div>
+    <div class="pm-screen" id="pmScreen">
+      <div class="pm-step on" data-k="0"><div class="pm-ico"><svg class="ico"><use href="/img/icons.svg#i-upload"/></svg></div><b>Backing up</b><div class="pm-bar"><i></i></div><small>Photos, contacts, chats</small></div>
+      <div class="pm-step" data-k="1"><div class="pm-ico"><svg class="ico"><use href="/img/icons.svg#i-user"/></svg></div><b>Signed out</b><div class="pm-toggle"><i></i></div><small>Google / Apple ID, UPI, bank apps</small></div>
+      <div class="pm-step" data-k="2"><div class="pm-ico sim"><span></span></div><b>SIM removed</b><div class="pm-tray"><i></i></div><small>And the memory card</small></div>
+      <div class="pm-step" data-k="3"><div class="pm-ico spin"></div><b>Erasing all data</b><div class="pm-bar red"><i></i></div><small>Factory reset</small></div>
+    </div>
+  </div>
+  <div>
+    <h2>Before you hand over a device</h2>
+    <p class="lead">Five minutes now protects your data and your accounts.</p>
+    <ol class="steps-list" id="pmSteps">
+      <li class="on"><b>Back up</b> photos, contacts and files.</li>
+      <li><b>Sign out</b> of Google or Apple ID, WhatsApp, UPI and banking apps. This also removes activation locks.</li>
+      <li><b>Remove</b> the SIM card and any memory card.</li>
+      <li><b>Factory-reset</b> phones and laptops. On laptops, wipe or remove the hard drive.</li>
+    </ol>
+    <p class="warn"><svg class="ico"><use href="/img/icons.svg#i-triangle-alert"/></svg>Don't take out swollen batteries yourself. Tell the collector instead.</p>
+  </div>
+</div></section>
+
+<!-- ============ CO2 ============ -->
+<section class="lsec light" id="co2"><div class="wrap">
+  <div class="sec-head">
+    <h2>How we estimate CO₂e avoided</h2>
+    <p class="lead">Recycling metals and plastics avoids part of the emissions of mining and making new material. We show a simple, transparent estimate, not a certified carbon figure.</p>
+  </div>
+  <div class="co2-grid">
+    <div>
+      <div class="formula">CO₂e avoided (kg) = Σ ( weight of each item type × factor for that type )<br>Car comparison (km) = CO₂e avoided ÷ 0.17 kg per km</div>
+      <div class="co2-try panel">
+        <label class="field"><span>Try it: a laptop that weighs</span>
+          <input type="range" id="co2Kg" min="1" max="5" step="0.1" value="2.5" aria-describedby="co2Out"></label>
+        <p id="co2Out" class="co2-out"></p>
+      </div>
+    </div>
+    <div style="overflow-x:auto"><table class="haz" id="factorTable"><thead><tr><th scope="col">Item type</th><th scope="col">Typical weight</th><th scope="col">Factor</th></tr></thead><tbody></tbody></table></div>
+  </div>
+  <p style="margin-top:14px;font-size:var(--t-sm)">Factors are illustrative values chosen for this student project. A real service would take them from a published life-cycle study.</p>
+</div></section>
+
+<!-- ============ SOURCES ============ -->
+<section class="lsec light" id="sources" style="border:0"><div class="wrap">
+  <h2>Sources</h2>
+  <ol class="src" style="margin-top:18px">
+    <li><a class="link" href="https://toxicslink.org/parliament-q-a/management-of-e-waste/" target="_blank" rel="noopener">Lok Sabha unstarred question 3684, answered 24 March 2025 (e-waste generation, recycler capacity)</a></li>
+    <li><a class="link" href="https://www.lkslaw.com/insights/articles/e-waste-management-rules-2022-an-analysis" target="_blank" rel="noopener">E-Waste (Management) Rules, 2022: an analysis (LKS)</a></li>
+    <li><a class="link" href="https://www.mpcb.gov.in/sites/default/files/List%20of%20Authorized%20E-waste%20Dismantlers%20and%20Recyclers%20in%20Maharashtra.pdf" target="_blank" rel="noopener">MPCB list of authorised e-waste dismantlers and recyclers in Maharashtra</a></li>
+    <li><a class="link" href="https://tnpcb.gov.in/pdf_2024/GuidanceDocEPR.pdf" target="_blank" rel="noopener">Guidance document on EPR under the E-Waste Rules (TNPCB)</a></li>
+  </ol>
+  <p class="muted" style="margin-top:16px;font-size:var(--t-sm)">All animations and the video on this page were made for EcoScrap and are not photographs.</p>
+</div></section>
+</main>
+<script src="/js/config.js"></script>
+<script src="/js/core.js"></script>
+<script src="/js/learn.js"></script>
+</body>
+</html>

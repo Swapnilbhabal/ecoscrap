@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a pickup – EcoScrap</title>
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/pages.css">
+</head>
+<body data-head="solid" class="page-light">
+<main class="light book">
+  <div class="wrap book-grid" id="bookGrid">
+    <section class="wizard" aria-labelledby="book-title">
+      <h1 id="book-title" class="book-title">Book a free pickup</h1>
+      <ol class="progress" id="progress" aria-label="Booking steps">
+        <li data-s="1" class="on"><span>1</span>Items</li>
+        <li data-s="2"><span>2</span>Address</li>
+        <li data-s="3"><span>3</span>Time</li>
+        <li data-s="4"><span>4</span>Confirm</li>
+      </ol>
+
+      <!-- Step 1: items -->
+      <div class="pane" data-step="1">
+        <h2 class="pane-title">What are you giving away?</h2>
+        <p class="pane-sub">Tap an item to add it. Then set its condition and how many you have.</p>
+        <div class="cat-grid" id="catGrid"></div>
+        <div class="lines" id="lines" aria-live="polite"></div>
+        <div class="photos">
+          <div>
+            <b>Photos (optional)</b>
+            <p class="muted">Helps the collector bring the right vehicle. Up to 3 photos.</p>
+          </div>
+          <label class="btn ghost sm photo-btn"><svg class="ico"><use href="/img/icons.svg#i-camera"/></svg>Add photos<input type="file" id="photoInput" accept="image/*" multiple hidden></label>
+          <div class="thumbs" id="thumbs"></div>
+        </div>
+      </div>
+
+      <!-- Step 2: address -->
+      <div class="pane" data-step="2" hidden>
+        <h2 class="pane-title">Where should we pick up?</h2>
+        <p class="pane-sub">Tap the map or drag the pin to your building. This is where the collector will navigate to.</p>
+        <div class="map-wrap">
+          <div class="map" id="pickMap" role="application" aria-label="Map: tap to place your pickup pin"></div>
+          <button type="button" class="btn sm dark locate" id="locateBtn">Use my location</button>
+          <p class="map-hint" id="mapHint">Pin not placed yet</p>
+        </div>
+        <div class="form-grid">
+          <label class="field full"><span>Flat, building and street</span>
+            <input class="input" id="address" autocomplete="street-address" placeholder="e.g. Flat 12, Shanti Niwas, Wadala East"></label>
+          <label class="field"><span>Pincode</span>
+            <input class="input" id="pincode" inputmode="numeric" maxlength="6" autocomplete="postal-code" placeholder="400037"></label>
+          <label class="field"><span>Landmark <small>(optional)</small></span>
+            <input class="input" id="landmark" maxlength="80" placeholder="Near the post office"></label>
+        </div>
+      </div>
+
+      <!-- Step 3: time -->
+      <div class="pane" data-step="3" hidden>
+        <h2 class="pane-title">When is a good time?</h2>
+        <p class="pane-sub">We pick up Monday to Saturday. The collector arrives within the slot you choose.</p>
+        <div class="label">Day</div>
+        <div class="chips day-chips" id="dayChips" role="group" aria-label="Pickup day"></div>
+        <div class="label" style="margin-top:22px">Time slot</div>
+        <div class="chips" id="slotChips" role="group" aria-label="Time slot"></div>
+        <div class="options">
+          <label class="check"><input type="checkbox" id="wipe" checked><span><b>Record a data-wipe request</b><br>For phones, laptops and drives. It is noted on your certificate.</span></label>
+          <label class="check"><input type="checkbox" id="donate"><span><b>Donate my payout</b><br>The amount goes to a tree-plantation drive instead of to you. You still get Green Points.</span></label>
+        </div>
+        <label class="field" style="margin-top:18px"><span>Note for the collector <small>(optional)</small></span>
+          <textarea class="textarea" id="notes" maxlength="300" placeholder="e.g. Fridge is on the 3rd floor, no lift"></textarea></label>
+      </div>
+
+      <!-- Step 4: contact + review -->
+      <div class="pane" data-step="4" hidden>
+        <h2 class="pane-title">Your details</h2>
+        <p class="pane-sub">The collector will call this number if they can't find you. Your number is never shown to other customers.</p>
+        <div class="form-grid">
+          <label class="field"><span>Full name</span><input class="input" id="name" autocomplete="name" maxlength="60"></label>
+          <label class="field"><span>Mobile number</span><input class="input" id="phone" inputmode="numeric" maxlength="10" autocomplete="tel-national" placeholder="10 digits"></label>
+          <label class="field full"><span>Email <small>(optional, for the certificate)</small></span><input class="input" id="email" type="email" autocomplete="email"></label>
+        </div>
+        <div class="review" id="review"></div>
+      </div>
+
+      <div class="wizard-nav">
+        <button type="button" class="btn ghost" id="backBtn" hidden>Back</button>
+        <button type="button" class="btn" id="nextBtn">Continue to address</button>
+      </div>
+    </section>
+
+    <aside class="estimate" aria-label="Your estimate">
+      <div class="est-card">
+        <small>Collector pays you</small>
+        <b class="est-big" id="estRs">₹0</b>
+        <div class="est-row">
+          <div><small>Weight</small><b id="estKg">0 kg</b></div>
+          <div><small>Green Points</small><b id="estPts" class="gold-t">0</b></div>
+          <div><small>CO₂e avoided</small><b id="estCo2">0 kg</b></div>
+        </div>
+        <ul class="est-lines" id="estLines"><li class="muted">No items yet</li></ul>
+        <div class="est-dest" id="estDest" hidden></div>
+        <p class="est-note">Prices come from the published rate card. If an item's condition is different at pickup, its price changes to the matching row, in front of you.</p>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Success screen -->
+  <section class="wrap booked" id="done" hidden aria-live="polite"></section>
+</main>
+<script src="/js/config.js"></script>
+<script src="/js/core.js"></script>
+<script src="/vendor/leaflet/leaflet.js"></script>
+<script src="/js/map-kit.js"></script>
+<script src="/js/book.js"></script>
+</body>
+</html>

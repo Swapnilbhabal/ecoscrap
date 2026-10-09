@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rate card – EcoScrap</title>
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/pages.css">
+</head>
+<body data-seed="5">
+<header class="page-head">
+  <svg class="traces" aria-hidden="true"></svg>
+  <div class="wrap">
+    <h1>The rate card</h1>
+    <p>Every customer gets the same price for the same item in the same condition. No bargaining at the door, and no surprises.</p>
+  </div>
+</header>
+<main class="light section" style="padding-top:56px">
+  <div class="wrap">
+    <div class="rate-wrap">
+      <table class="rate-table">
+        <thead><tr><th scope="col">Item</th><th scope="col">Working</th><th scope="col">Not working</th><th scope="col">Broken / parts missing</th><th scope="col">Typical weight</th></tr></thead>
+        <tbody id="rateBody"><tr><td colspan="5"><div class="skel" style="height:200px"></div></td></tr></tbody>
+      </table>
+    </div>
+    <p class="muted" style="font-size:var(--t-sm);margin-top:14px">Amounts are per item, paid at pickup. Rates are set for this project demo and would be revised monthly from recycler buy-back prices.</p>
+    <div class="rules">
+      <div><h3>Checked in front of you</h3><p>The collector checks each item's condition at your door. If it differs from what you booked, the price moves to the matching row of this table. You see the change before you share your handover code.</p></div>
+      <div><h3>Weighed in front of you</h3><p>Items are weighed on a digital scale. The verified weight decides your Green Points and the CO₂ figure on your certificate.</p></div>
+      <div><h3>Donate if you prefer</h3><p>Tick “donate my payout” while booking and the amount goes to a tree-plantation drive. You still get the full Green Points.</p></div>
+    </div>
+    <div style="margin-top:44px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn lg" href="/book.html">Book a pickup</a><a class="btn lg ghost" href="/learn.html">Why these items matter</a></div>
+  </div>
+</main>
+<script src="/js/config.js"></script>
+<script src="/js/core.js"></script>
+<script>
+  api("catalog").then((c) => {
+    $("#rateBody").innerHTML = Object.entries(c.categories).map(([k, it]) => `<tr>
+      <td><div class="item">${icon(it.icon)}<div><b>${esc(it.name)}</b><small>${esc(it.examples)}</small></div></div></td>
+      <td class="num">${fmt.rs(it.rates.working)}</td><td class="num">${fmt.rs(it.rates.not_working)}</td><td class="num">${fmt.rs(it.rates.broken)}</td>
+      <td><small>about ${fmt.num(it.kg, 1)} kg</small></td></tr>`).join("");
+  }).catch((e) => toast(e.message, true));
+</script>
+</body>
+</html>

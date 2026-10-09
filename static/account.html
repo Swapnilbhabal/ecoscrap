@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My account – EcoScrap</title>
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/account.css">
+</head>
+<body data-head="solid" class="page-light">
+<main class="light acct">
+  <div class="wrap">
+    <section class="acct-head" id="acctHead">
+      <div class="skel" style="height:44px;width:40%"></div>
+    </section>
+    <div class="acct-stats" id="acctStats"></div>
+
+    <div class="acct-tabs" role="tablist">
+      <button role="tab" data-tab="orders" aria-selected="true">Your pickups</button>
+      <button role="tab" data-tab="points" aria-selected="false">Green Points</button>
+      <button role="tab" data-tab="profile" aria-selected="false">Profile & security</button>
+    </div>
+
+    <section class="tab" data-tab-pane="orders">
+      <div class="orders-tools">
+        <div class="chips" id="orderFilter"></div>
+        <a class="btn sm" href="/book.html">Book a new pickup</a>
+      </div>
+      <div id="orders" aria-live="polite"><div class="skel" style="height:180px"></div></div>
+    </section>
+
+    <section class="tab" data-tab-pane="points" hidden>
+      <div id="pointsPane"></div>
+    </section>
+
+    <section class="tab" data-tab-pane="profile" hidden>
+      <div class="profile-grid">
+        <form class="panel" id="profileForm" novalidate>
+          <h3>Your details</h3>
+          <label class="field"><span>Full name</span><input class="input" name="name" maxlength="60"></label>
+          <label class="field"><span>Mobile number</span><input class="input" name="phone" disabled></label>
+          <label class="field"><span>Email</span><input class="input" name="email" type="email"></label>
+          <button class="btn" type="submit">Save changes</button>
+        </form>
+        <form class="panel" id="pwForm" novalidate>
+          <h3>Change password</h3>
+          <label class="field"><span>Current password</span><input class="input" name="old" type="password" autocomplete="current-password"></label>
+          <label class="field"><span>New password</span><input class="input" name="new" type="password" autocomplete="new-password"></label>
+          <button class="btn" type="submit">Update password</button>
+          <hr>
+          <button class="btn danger" type="button" id="signOut">Sign out</button>
+        </form>
+      </div>
+    </section>
+  </div>
+</main>
+<script src="/js/config.js"></script>
+<script src="/js/core.js"></script>
+<script src="/js/account.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+ecoscrap.db
+.env
+static/uploads/*
+!static/uploads/.keep
